@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">EmprendeTEC</string>
+    <string name="tv_Login">LOGIN</string>
+    <string name="tv_Reg">REGISTER</string>
+    <string name="tv_Email">Email:</string>
+    <string name="tv_Pass">Contraseña:</string>
+    <string name="tv_Name">Nombre:</string>
+    <string name="tv_Last">Apellido:</string>
+    <string name="tv_Student">Estudiante</string>
+    <string name="tv_Teacher">Docente</string>
+    <string name="tv_Forgot">¿Olvido su contraseña?</string>
+    <string name="tv_Start">Iniciar</string>
+    <string name="tv_Account">¿Aún no tiene una cuenta?</string>
+    <string name="tv_Account2">¿Ya tiene una cuenta?</string>
+    <string name="tv_Register">Registrate</string>
+    <string name="tv_ReadyAccount">Inicie Sesión</string>
+    <string name="tv_Logout">Cerrar Sesión</string>
+
+</resources>

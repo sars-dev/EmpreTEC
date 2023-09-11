@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1042950598774",
+    "project_id": "empretec-a4b0d",
+    "storage_bucket": "empretec-a4b0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042950598774:android:c9773db2aefa3fdc0e6f57",
+        "android_client_info": {
+          "package_name": "com.sarsdev.empretec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042950598774-6hqn11933dvkjq8tbmp1u7cf5b4eg4u3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMA1n9fB-mXnYTLF9aqTB4PHODY5OS_1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042950598774-6hqn11933dvkjq8tbmp1u7cf5b4eg4u3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
