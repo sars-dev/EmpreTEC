@@ -28,7 +28,7 @@ public class Detalles extends AppCompatActivity {
         if (bundle != null){
             desc.setText(bundle.getString("Description"));
             title.setText(bundle.getString("Title"));
-            cat.setText(bundle.getString("Language"));
+            cat.setText(bundle.getString("Category"));
             key = bundle.getString("Key");
             imageUrl = bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
