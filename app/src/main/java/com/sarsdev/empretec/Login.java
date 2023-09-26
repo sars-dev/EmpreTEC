@@ -3,9 +3,12 @@ package com.sarsdev.empretec;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +27,9 @@ public class Login extends AppCompatActivity {
     TextView tvRegister;
     EditText emailET, passET;
     private FirebaseAuth mAuth;
+    private boolean isPasswordVisible = false;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +56,32 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        //Metodo para mostrar y ocultar contraseña
+        passET.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2;
+            if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (passET.getRight() - passET.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    togglePasswordVisibility();
+                    return true;
+                }
+            }
+            return false;
+        });
+
+    }
+
+    private void togglePasswordVisibility() {
+        if (isPasswordVisible) {
+            // Oculta la contraseña
+            passET.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            isPasswordVisible = false;
+        } else {
+            // Muestra la contraseña
+            passET.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            isPasswordVisible = true;
+        }
+        // Mueve el cursor al final del texto
+        passET.setSelection(passET.getText().length());
     }
 
     public void openRegister(){

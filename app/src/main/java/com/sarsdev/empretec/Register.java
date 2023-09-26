@@ -2,14 +2,16 @@ package com.sarsdev.empretec;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -35,7 +37,9 @@ public class Register extends AppCompatActivity {
     private String userID;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private boolean isPasswordVisible = false;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +72,32 @@ public class Register extends AppCompatActivity {
             }
         });
 
+        //Metodo para mostrar y ocultar contraseña
+        passET.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2;
+            if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (passET.getRight() - passET.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    togglePasswordVisibility();
+                    return true;
+                }
+            }
+            return false;
+        });
+
+    }
+
+    private void togglePasswordVisibility() {
+        if (isPasswordVisible) {
+            // Oculta la contraseña
+            passET.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            isPasswordVisible = false;
+        } else {
+            // Muestra la contraseña
+            passET.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            isPasswordVisible = true;
+        }
+        // Mueve el cursor al final del texto
+        passET.setSelection(passET.getText().length());
     }
 
     public void openLogin(){
