@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -25,14 +26,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Perfil extends Fragment {
 
     View view;
+    CircleImageView imgProfile;
     Button btnSalir;
     ExtendedFloatingActionButton fabFA;
     private FirebaseAuth mAuth;
     private FirebaseUser useract;
-    private TextView occupationTxtView, nameTxtView, emailTxtView, nameTV;
+    private TextView occupationTxtView, nameTxtView, emailTxtView, phoneTxtView, streetTxtView, nameTV;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,6 +66,9 @@ public class Perfil extends Fragment {
         nameTxtView = view.findViewById(R.id.tvName);
         nameTV = view.findViewById(R.id.name_textview);
         emailTxtView = view.findViewById(R.id.email_textview);
+        streetTxtView = view.findViewById(R.id.home_textview);
+        phoneTxtView = view.findViewById(R.id.phone_textview);
+        imgProfile = view.findViewById(R.id.user_imageview);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference loginLogsRef = db.collection("users");
@@ -81,10 +88,21 @@ public class Perfil extends Fragment {
                             String nombre = (String) data.get("Nombre");
                             String apellidoUsuario = (String) data.get("Apellido");
                             String correoUsuario = (String) data.get("Correo");
+                            String telefonoUsuario = (String) data.get("Telefono");
+                            String direccionUsuario = (String) data.get("Direccion");
+                            String profileImageUrl = document.getString("profileImageUrl");
+                            if (profileImageUrl != null) {
+                                Glide.with(Perfil.this)
+                                        .load(profileImageUrl)
+                                        .placeholder(R.drawable.imausera)
+                                        .into(imgProfile);
+                            }
                             nameTxtView.setText("");
                             nameTV.setText(nombre);
                             occupationTxtView.setText(nombreUsuario +" "+ apellidoUsuario);
                             emailTxtView.setText(correoUsuario);
+                            streetTxtView.setText(direccionUsuario);
+                            phoneTxtView.setText(telefonoUsuario);
                         } else {
                             Toast.makeText(getActivity(), "No hay datos", Toast.LENGTH_SHORT).show();
                         }

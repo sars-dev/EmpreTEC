@@ -150,7 +150,7 @@ public class Register extends AppCompatActivity {
                     user.put("Usuario", selectedUser);
                     user.put("Telefono", phone);
                     user.put("Direccion", street);
-                    user.put("URL Perfil", img_profile);
+                    user.put("profileImageUrl", img_profile);
 
                     documentReference.set(user).addOnSuccessListener(unused -> Log.d("TAG", "onSuccess: Datos registrados "+userID));
                     Toast.makeText(Register.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
