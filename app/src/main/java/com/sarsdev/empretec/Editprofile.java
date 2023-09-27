@@ -1,22 +1,17 @@
 package com.sarsdev.empretec;
 
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
@@ -25,43 +20,32 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Map;
 
-public class Perfil extends Fragment {
+import de.hdodenhof.circleimageview.CircleImageView;
 
-    View view;
-    Button btnSalir;
-    ExtendedFloatingActionButton fabFA;
+public class Editprofile extends AppCompatActivity {
+
+    CircleImageView imgProfile;
+    Button saveEdit;
     private FirebaseAuth mAuth;
     private FirebaseUser useract;
-    private TextView occupationTxtView, nameTxtView, emailTxtView, nameTV;
+    private Uri imageURL;
+    EditText nameET, lastET, emailET, phoneET, streetET;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_perfil, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_editprofile);
 
-        btnSalir = view.findViewById(R.id.btnLogout);
-        fabFA = view.findViewById(R.id.fabFA);
         mAuth = FirebaseAuth.getInstance();
         useract = FirebaseAuth.getInstance().getCurrentUser();
 
-        btnSalir.setOnClickListener(view -> {
-            mAuth.signOut();
-            Intent intent = new Intent(getActivity(), Login.class);
-            startActivity(intent);
-        });
-
-        fabFA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), Editprofile.class));
-            }
-        });
-
-        occupationTxtView = view.findViewById(R.id.occupation_textview);
-        nameTxtView = view.findViewById(R.id.tvName);
-        nameTV = view.findViewById(R.id.name_textview);
-        emailTxtView = view.findViewById(R.id.email_textview);
+        nameET = findViewById(R.id.nameET);
+        lastET = findViewById(R.id.lastET);
+        emailET = findViewById(R.id.emailET);
+        phoneET = findViewById(R.id.phoneET);
+        streetET = findViewById(R.id.streetET);
+        saveEdit = findViewById(R.id.btn_Edit);
+        imgProfile = findViewById(R.id.imgProfile);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference loginLogsRef = db.collection("users");
@@ -81,12 +65,15 @@ public class Perfil extends Fragment {
                             String nombre = (String) data.get("Nombre");
                             String apellidoUsuario = (String) data.get("Apellido");
                             String correoUsuario = (String) data.get("Correo");
-                            nameTxtView.setText("");
-                            nameTV.setText(nombre);
-                            occupationTxtView.setText(nombreUsuario +" "+ apellidoUsuario);
-                            emailTxtView.setText(correoUsuario);
+                            String telefonoUsuario = (String) data.get("Telefono");
+                            String direccionUsuario = (String) data.get("Direccion");
+                            nameET.setText(nombre);
+                            lastET.setText(apellidoUsuario);
+                            emailET.setText(correoUsuario);
+                            phoneET.setText(telefonoUsuario);
+                            streetET.setText(direccionUsuario);
                         } else {
-                            Toast.makeText(getActivity(), "No hay datos", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Editprofile.this, "No Hay Datos", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Log.d("Firestore", "Error getting user data: " + task.getException());
@@ -94,9 +81,8 @@ public class Perfil extends Fragment {
                 }
             });
         } else {
-            Toast.makeText(getActivity(), "No hay usuario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No Hay Usuario", Toast.LENGTH_SHORT).show();
         }
-        return view;
-    }
 
+    }
 }

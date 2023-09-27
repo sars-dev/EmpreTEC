@@ -111,6 +111,9 @@ public class Register extends AppCompatActivity {
         String last = lastET.getText().toString();
         String mail = emailET.getText().toString().trim();
         String password = passET.getText().toString().trim();
+        String phone = "";
+        String street = "";
+        String img_profile = "";
         selectedRadioButton = findViewById(radioGroup.getCheckedRadioButtonId());
         String selectedUser = selectedRadioButton.getText().toString();
 
@@ -145,6 +148,9 @@ public class Register extends AppCompatActivity {
                     user.put("Correo", mail);
                     user.put("Contraseña", password);
                     user.put("Usuario", selectedUser);
+                    user.put("Telefono", phone);
+                    user.put("Direccion", street);
+                    user.put("URL Perfil", img_profile);
 
                     documentReference.set(user).addOnSuccessListener(unused -> Log.d("TAG", "onSuccess: Datos registrados "+userID));
                     Toast.makeText(Register.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
