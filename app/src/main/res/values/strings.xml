@@ -19,4 +19,12 @@
     <string name="tv_ReadyAccount">Inicie Sesión</string>
     <string name="tv_Logout">Cerrar Sesión</string>
 
+    <string name="tv_invitation">Convocatorias</string>
+    <string name="tv_Videos">Videos</string>
+    <string name="tv_Books">Libros</string>
+    <string name="tv_consul">Asesorias</string>
+
+    <string name="tv_opt">Selecciona algun apartado</string>
+    <string name="tv_bien">Bienvenido</string>
+
 </resources>
