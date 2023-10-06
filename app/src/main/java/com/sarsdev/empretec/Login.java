@@ -1,9 +1,11 @@
 package com.sarsdev.empretec;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.android.gms.tasks.Task;
@@ -24,7 +28,7 @@ import com.google.android.gms.tasks.Task;
 public class Login extends AppCompatActivity {
 
     Button btnLogin;
-    TextView tvRegister;
+    TextView tvRegister, lblForgot;
     EditText emailET, passET;
     private FirebaseAuth mAuth;
     private boolean isPasswordVisible = false;
@@ -37,6 +41,7 @@ public class Login extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.btn_Login);
         tvRegister = findViewById(R.id.lblRegister);
+        lblForgot = findViewById(R.id.lblForgot);
         emailET = findViewById(R.id.emailET);
         passET = findViewById(R.id.passET);
 
@@ -66,6 +71,48 @@ public class Login extends AppCompatActivity {
                 }
             }
             return false;
+        });
+
+        lblForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final EditText resetMail = new EditText(v.getContext());
+                final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
+                passwordResetDialog.setTitle("¿Restablecer contraseña?");
+                passwordResetDialog.setMessage("Ingrese su email para recibir el link de restablecimiento.");
+                passwordResetDialog.setView(resetMail);
+
+                passwordResetDialog.setPositiveButton("Enviar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // extract the email and send reset link
+                        String mail = resetMail.getText().toString();
+                        mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(Login.this, "El link fue enviado a tu email.", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(Login.this, "Error ! El link no ha sido enviado." + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    }
+                });
+
+                passwordResetDialog.setNegativeButton("Cerrar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // close the dialog
+                    }
+                });
+
+                passwordResetDialog.create().show();
+
+            }
         });
 
     }
