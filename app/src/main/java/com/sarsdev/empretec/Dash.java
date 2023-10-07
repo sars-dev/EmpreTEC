@@ -12,6 +12,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.sarsdev.empretec.Fragment.Inicio;
+import com.sarsdev.empretec.Fragment.Perfil;
+import com.sarsdev.empretec.Fragment.Proyectos;
+import com.sarsdev.empretec.Fragment.Recursos;
+
 import nl.joery.animatedbottombar.AnimatedBottomBar;
 
 public class Dash extends AppCompatActivity {

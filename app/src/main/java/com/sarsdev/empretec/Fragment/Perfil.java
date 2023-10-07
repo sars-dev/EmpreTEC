@@ -1,4 +1,4 @@
-package com.sarsdev.empretec;
+package com.sarsdev.empretec.Fragment;
 
 import android.os.Bundle;
 
@@ -23,6 +23,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.sarsdev.empretec.Custom.Editprofile;
+import com.sarsdev.empretec.Login;
+import com.sarsdev.empretec.R;
 
 import java.util.Map;
 

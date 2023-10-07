@@ -7,4 +7,5 @@
     <color name="blue2">#8DD0FF</color>
     <color name="green">#0A8B3E</color>
     <color name="red">#DC0000</color>
+    <color name="gray_light">#F3F3F3</color>
 </resources>

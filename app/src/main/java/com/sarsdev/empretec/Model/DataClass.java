@@ -1,4 +1,4 @@
-package com.sarsdev.empretec;
+package com.sarsdev.empretec.Model;
 
 public class DataClass {
 

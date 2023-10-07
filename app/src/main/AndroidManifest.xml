@@ -31,10 +31,10 @@
             android:name=".Convocatorias"
             android:exported="false" />
         <activity
-            android:name=".Editprofile"
+            android:name=".Custom.Editprofile"
             android:exported="false" />
         <activity
-            android:name=".Detalles"
+            android:name=".Custom.Detalles"
             android:exported="false" />
         <activity
             android:name=".Dash"

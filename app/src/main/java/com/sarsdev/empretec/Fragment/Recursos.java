@@ -1,6 +1,5 @@
-package com.sarsdev.empretec;
+package com.sarsdev.empretec.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -9,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.sarsdev.empretec.R;
 
 public class Recursos extends Fragment {
 
@@ -29,32 +31,28 @@ public class Recursos extends Fragment {
         categoryCard1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Convocatorias.class);
-                startActivity(intent);
+                Toast.makeText(getContext(), "Proximamente", Toast.LENGTH_SHORT).show();
             }
         });
 
         categoryCard2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Libros.class);
-                startActivity(intent);
+                Toast.makeText(getContext(), "Proximamente", Toast.LENGTH_SHORT).show();
             }
         });
 
         categoryCard3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Libros.class);
-                startActivity(intent);
+                Toast.makeText(getContext(), "Proximamente", Toast.LENGTH_SHORT).show();
             }
         });
 
         categoryCard4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Libros.class);
-                startActivity(intent);
+                Toast.makeText(getContext(), "Proximamente", Toast.LENGTH_SHORT).show();
             }
         });
 

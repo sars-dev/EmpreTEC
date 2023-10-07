@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Recursos">
+    tools:context=".Fragment.Recursos">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="42dp"
             android:text="@string/tv_bien"
-            android:textSize="38sp"
+            android:textSize="35sp"
             android:textColor="@color/blue1"
             android:layout_marginStart="18dp"
             android:layout_marginTop="40dp"
@@ -52,7 +52,7 @@
         <LinearLayout
             android:id="@+id/row1"
             android:layout_width="0dp"
-            android:layout_height="175dp"
+            android:layout_height="195dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             android:padding="10dp"
@@ -64,7 +64,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/categoryCard"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="145dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
@@ -101,7 +101,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/categoryCard2"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="145dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
@@ -140,7 +140,7 @@
         <LinearLayout
             android:id="@+id/row2"
             android:layout_width="0dp"
-            android:layout_height="175dp"
+            android:layout_height="195dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             android:padding="10dp"
@@ -152,7 +152,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/categoryCard3"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="145dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
@@ -189,7 +189,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/categoryCard4"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="145dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"

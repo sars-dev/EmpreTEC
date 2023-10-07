@@ -1,4 +1,4 @@
-package com.sarsdev.empretec;
+package com.sarsdev.empretec.Custom;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.sarsdev.empretec.R;
 
 public class Detalles extends AppCompatActivity {
 
-    TextView title, desc, cat, detailLang2;
+    TextView title, desc, cat;
     ImageView detailImage;
     String key = "";
     String imageUrl = "";
