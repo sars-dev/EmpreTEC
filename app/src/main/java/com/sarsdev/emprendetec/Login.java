@@ -1,4 +1,4 @@
-package com.sarsdev.empretec;
+package com.sarsdev.emprendetec;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;

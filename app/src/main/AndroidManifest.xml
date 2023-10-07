@@ -22,15 +22,6 @@
         android:theme="@style/Theme.EmpreTEC"
         tools:targetApi="31">
         <activity
-            android:name=".LibroviewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Libros"
-            android:exported="false" />
-        <activity
-            android:name=".Convocatorias"
-            android:exported="false" />
-        <activity
             android:name=".Custom.Editprofile"
             android:exported="false" />
         <activity

@@ -1,4 +1,4 @@
-package com.sarsdev.empretec.Fragment;
+package com.sarsdev.emprendetec.Fragment;
 
 import android.os.Bundle;
 
@@ -17,9 +17,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.sarsdev.empretec.Adapter.MyAdapter;
-import com.sarsdev.empretec.Model.DataClass;
-import com.sarsdev.empretec.R;
+import com.sarsdev.emprendetec.Adapter.MyAdapter;
+import com.sarsdev.emprendetec.Model.CustomItemViewer;
+import com.sarsdev.emprendetec.Model.DataClass;
+import com.sarsdev.emprendetec.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,7 @@ public class Inicio extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerView);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setItemAnimator(new CustomItemViewer());
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);

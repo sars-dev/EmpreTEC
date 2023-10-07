@@ -1,4 +1,4 @@
-package com.sarsdev.empretec.Adapter;
+package com.sarsdev.emprendetec.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.sarsdev.empretec.Custom.Detalles;
-import com.sarsdev.empretec.Model.DataClass;
-import com.sarsdev.empretec.R;
+import com.sarsdev.emprendetec.Custom.Detalles;
+import com.sarsdev.emprendetec.Model.DataClass;
+import com.sarsdev.emprendetec.R;
 
 import java.util.List;
 

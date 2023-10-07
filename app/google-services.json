@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "1042950598774",
+    "firebase_url": "https://empretec-a4b0d-default-rtdb.firebaseio.com",
     "project_id": "empretec-a4b0d",
     "storage_bucket": "empretec-a4b0d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1042950598774:android:c9773db2aefa3fdc0e6f57",
+        "mobilesdk_app_id": "1:1042950598774:android:227fbb850cfd7ab80e6f57",
         "android_client_info": {
-          "package_name": "com.sarsdev.empretec"
+          "package_name": "com.sarsdev.emprendetec"
         }
       },
       "oauth_client": [

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.sarsdev.empretec'
+    namespace 'com.sarsdev.emprendetec'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.sarsdev.empretec"
+        applicationId "com.sarsdev.emprendetec"
         minSdk 24
         targetSdk 33
         versionCode 1

@@ -1,4 +1,4 @@
-package com.sarsdev.empretec.Fragment;
+package com.sarsdev.emprendetec.Fragment;
 
 import androidx.fragment.app.Fragment;
 
@@ -33,9 +33,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.sarsdev.empretec.Dash;
-import com.sarsdev.empretec.Model.DataClass;
-import com.sarsdev.empretec.R;
+import com.sarsdev.emprendetec.Dash;
+import com.sarsdev.emprendetec.Model.DataClass;
+import com.sarsdev.emprendetec.R;
 
 public class Proyectos extends Fragment {
 

@@ -1,4 +1,4 @@
-package com.sarsdev.empretec.Custom;
+package com.sarsdev.emprendetec.Custom;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.sarsdev.empretec.R;
+import com.sarsdev.emprendetec.R;
 
 public class Detalles extends AppCompatActivity {
 

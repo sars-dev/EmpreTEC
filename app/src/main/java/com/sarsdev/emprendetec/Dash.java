@@ -1,4 +1,4 @@
-package com.sarsdev.empretec;
+package com.sarsdev.emprendetec;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,10 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.sarsdev.empretec.Fragment.Inicio;
-import com.sarsdev.empretec.Fragment.Perfil;
-import com.sarsdev.empretec.Fragment.Proyectos;
-import com.sarsdev.empretec.Fragment.Recursos;
+import com.sarsdev.emprendetec.Fragment.Inicio;
+import com.sarsdev.emprendetec.Fragment.Perfil;
+import com.sarsdev.emprendetec.Fragment.Proyectos;
+import com.sarsdev.emprendetec.Fragment.Recursos;
 
 import nl.joery.animatedbottombar.AnimatedBottomBar;
 

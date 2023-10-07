@@ -1,4 +1,4 @@
-package com.sarsdev.empretec.Custom;
+package com.sarsdev.emprendetec.Custom;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -28,8 +28,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
-import com.sarsdev.empretec.Dash;
-import com.sarsdev.empretec.R;
+import com.sarsdev.emprendetec.Dash;
+import com.sarsdev.emprendetec.R;
 
 import java.util.HashMap;
 import java.util.Map;

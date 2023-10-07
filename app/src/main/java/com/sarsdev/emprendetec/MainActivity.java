@@ -1,4 +1,4 @@
-package com.sarsdev.empretec;
+package com.sarsdev.emprendetec;
 
 import androidx.appcompat.app.AppCompatActivity;
 
