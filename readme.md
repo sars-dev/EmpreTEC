@@ -1,3 +1,3 @@
-#EmprendeTEC
+EmprendeTEC
 
-##Aplicacion Android para TuApp
+Aplicacion Android para TuApp
