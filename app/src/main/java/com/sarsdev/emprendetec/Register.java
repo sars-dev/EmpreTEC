@@ -142,6 +142,11 @@ public class Register extends AppCompatActivity {
         selectedRadioButton = findViewById(radioGroup.getCheckedRadioButtonId());
         String selectedUser = selectedRadioButton.getText().toString();
 
+        if (uri == null) {
+        Toast.makeText(Register.this, "Por favor, seleccione una imagen de perfil", Toast.LENGTH_SHORT).show();
+        return;
+        }
+
         if (TextUtils.isEmpty(name)){
             nameET.setError("Ingrese un Nombre");
             nameET.requestFocus();
