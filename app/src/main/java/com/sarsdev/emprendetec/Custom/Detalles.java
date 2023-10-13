@@ -21,8 +21,8 @@ public class Detalles extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles);
 
-        title = findViewById(R.id.title);
-        detailImage = findViewById(R.id.image);
+        title = findViewById(R.id.Title);
+        detailImage = findViewById(R.id.recImage);
         desc = findViewById(R.id.desc);
         cat = findViewById(R.id.cat);
         Bundle bundle = getIntent().getExtras();

@@ -63,6 +63,7 @@ public class Dash extends AppCompatActivity {
     private void replace(Fragment fragment){
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.fade_entra, R.anim.fade_sale);
         transaction.replace(R.id.framelayout, fragment);
         transaction.commit();
 
